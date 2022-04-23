@@ -1,0 +1,24 @@
+center(style='margin-top:10%;')
+  script(src='https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js')
+  lottie-player(style='height:40vh;' src='https://assets9.lottiefiles.com/packages/lf20_6e0qqtpa.json' hover='' loop='' autoplay='')
+  br
+  a.apiuri
+    b GET
+  a.apiuripath(onclick='useApi()' href='#') /api/chat
+  br
+style.
+  html {
+  background-color:#37095E;
+  }
+  .apiuri {
+  color:white;
+  }
+  .apiuripath {
+  color:red;
+  }
+script.
+  function useApi() {
+  var msg = prompt("Enter your message");
+  if (msg === "") return;
+  location.href = "/api/chat?msg=" + msg
+  }
